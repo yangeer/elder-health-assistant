@@ -1,9 +1,8 @@
-import { homedir } from 'node:os';
 /** Check discovery and loading with the installed official filesystem provider. */
 import { createRequire } from 'node:module';
 import assert from 'node:assert/strict';
 import { resolve } from 'node:path';
-const cli = process.env.DSH_CLI ?? resolve(homedir(), '.local/share/elder-dsh/node_modules/@deepseek-ai/dsh/lib/bin.js');
+const cli = process.env.DSH_CLI ?? '/root/.local/share/elder-dsh/node_modules/@deepseek-ai/dsh/lib/bin.js';
 const require = createRequire(resolve(cli));
 const { FileSystemSkillProvider } = await import(require.resolve('@deepseek-ai/dsh-skill-filesystem'));
 // No virtual filesystem service: exercise the provider's actual host filesystem path.

@@ -2,8 +2,41 @@
 """Local command-line tools for the DeepSeek Harness health-card skill."""
 import argparse
 import json
+import os
 from pathlib import Path
 import sys
+import tempfile
+import uuid
+import wave
+
+
+def prepare_reminder(text_file):
+    """Prepare one WAV before its task exists and return a safe reference."""
+    from qwen_voice import configured, synthesize
+    if not configured():
+        raise RuntimeError('请在 Harness 启动环境配置千问 API Key，再准备提醒语音。')
+    root = Path(__file__).resolve().parents[4]
+    directory = root / 'outputs/harness/reminder-audio'
+    directory.mkdir(mode=0o700, parents=True, exist_ok=True)
+    audio_id = str(uuid.uuid4())
+    text = text_file.read_text(encoding='utf-8').strip()
+    if text.startswith('【') and '\n' in text:
+        text = text.split('\n', 1)[1].strip()
+    if not 0 < len(text) <= 180:
+        raise ValueError('提醒文稿应为 1 到 180 字。')
+    with tempfile.TemporaryDirectory(dir=directory) as work:
+        temp = Path(work)
+        wav = temp / 'prepared.wav'
+        wav.write_bytes(synthesize(text))
+        with wave.open(str(wav), 'rb') as audio:
+            seconds = audio.getnframes() / audio.getframerate()
+            if not 0 < seconds <= 60 or not audio.readframes(1):
+                raise ValueError('提醒音频为空或超过一分钟。')
+        wav.chmod(0o600)
+        output = directory / (audio_id + '.wav')
+        os.replace(wav, output)
+    return {'audio_id': audio_id, 'marker': f'[[elder-health-audio:{audio_id}]]',
+            'output': str(output), 'seconds': round(seconds, 2)}
 
 
 def main():
@@ -16,7 +49,12 @@ def main():
     speech = commands.add_parser('speech', help='Synthesize an authorized reminder with existing Qwen settings')
     speech.add_argument('--text', required=True, type=Path)
     speech.add_argument('--output', required=True, type=Path)
+    prepare = commands.add_parser('prepare-reminder', help='Pre-render a WAV and issue a Harness task marker')
+    prepare.add_argument('--text', required=True, type=Path)
     args = parser.parse_args()
+    if args.command == 'prepare-reminder':
+        print(json.dumps(prepare_reminder(args.text), ensure_ascii=False))
+        return
     if args.command == 'scan':
         from recognition import recognize, read_medication, read_metrics
         photo = args.image.read_bytes()
@@ -47,6 +85,6 @@ def main():
 if __name__ == '__main__':
     try:
         main()
-    except (ValueError, RuntimeError, OSError) as exc:
+    except (ValueError, RuntimeError, OSError, wave.Error) as exc:
         print(str(exc), file=sys.stderr)
         sys.exit(1)
