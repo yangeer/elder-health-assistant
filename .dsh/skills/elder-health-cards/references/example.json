@@ -1,0 +1,16 @@
+{
+  "person": "长辈",
+  "age": 68,
+  "date": "2026-11-18",
+  "plan_date": "演示日期",
+  "demo": true,
+  "urgent": false,
+  "restrictions": ["示例未收集个人忌口，请在正式使用前补充"],
+  "reports": [
+    {"metric_id": "TG", "name": "甘油三酯", "value": "2.10", "unit": "mmol/L", "reference": "0.00–1.70", "flag": "↑", "test_date": "2026-11-18", "source_id": "演示图1第1行", "source_quote": "甘油三酯 2.10 mmol/L ↑ 参考范围 0.00–1.70", "confirmed": true}
+  ],
+  "medications": [
+    {"name": "演示甲片（虚构）", "form": "片剂", "strength": "演示规格 A", "dose": "每次 1 片", "events": [{"slot": "早饭后", "timing": "早饭后服用"}], "source_type": "prescription", "source_id": "虚构处方A", "source_quote": "演示甲片，演示规格A，每次1片，每日一次，早饭后服用。", "confirmed": true, "conflict": false, "pending_reason": ""},
+    {"name": "演示乙胶囊（虚构）", "form": "胶囊剂", "strength": "演示规格 B", "dose": "", "events": [], "source_type": "box", "source_id": "演示药盒B", "source_quote": "演示乙胶囊，演示规格B。", "confirmed": false, "conflict": false, "pending_reason": "缺少个人医嘱；请向医师或药师确认每次剂量、频次及服药时间。"}
+  ]
+}

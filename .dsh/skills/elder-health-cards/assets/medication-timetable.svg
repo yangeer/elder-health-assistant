@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 1240 1754">
+<rect width="1240" height="1754" fill="#FAFAF4"/>
+<rect width="1240" height="20" fill="#145B4B"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#17342F">
+<text x="64" y="86" font-size="38" fill="#145B4B">空白模板 · 未核实前不能作为服药依据</text>
+<text x="64" y="186" font-size="72" fill="#17342F">每日用药时刻表</text>
+<text x="64" y="270" font-size="42" fill="#17342F">称呼：______    方案日期：________</text>
+<rect x="64" y="320" width="544" height="310" rx="18" fill="white" stroke="#D7E0D8" stroke-width="2"/>
+<rect x="64" y="320" width="544" height="84" rx="18" fill="#145B4B"/>
+<text x="88" y="380" font-size="50" fill="white">早饭前</text>
+<text x="88" y="474" font-size="50" fill="#17342F">药名：______</text>
+<text x="88" y="538" font-size="50" fill="#17342F">每次：___单位</text>
+<text x="88" y="606" font-size="38" fill="#17342F">规格/来源：____</text>
+<rect x="632" y="320" width="544" height="310" rx="18" fill="white" stroke="#D7E0D8" stroke-width="2"/>
+<rect x="632" y="320" width="544" height="84" rx="18" fill="#DCEAE0"/>
+<text x="656" y="380" font-size="50" fill="#17342F">早饭后</text>
+<text x="656" y="474" font-size="50" fill="#17342F">药名：______</text>
+<text x="656" y="538" font-size="50" fill="#17342F">每次：___单位</text>
+<text x="656" y="606" font-size="38" fill="#17342F">规格/来源：____</text>
+<rect x="64" y="654" width="544" height="310" rx="18" fill="white" stroke="#D7E0D8" stroke-width="2"/>
+<rect x="64" y="654" width="544" height="84" rx="18" fill="#145B4B"/>
+<text x="88" y="714" font-size="50" fill="white">午饭前</text>
+<text x="88" y="808" font-size="50" fill="#17342F">药名：______</text>
+<text x="88" y="872" font-size="50" fill="#17342F">每次：___单位</text>
+<text x="88" y="940" font-size="38" fill="#17342F">规格/来源：____</text>
+<rect x="632" y="654" width="544" height="310" rx="18" fill="white" stroke="#D7E0D8" stroke-width="2"/>
+<rect x="632" y="654" width="544" height="84" rx="18" fill="#DCEAE0"/>
+<text x="656" y="714" font-size="50" fill="#17342F">午饭后</text>
+<text x="656" y="808" font-size="50" fill="#17342F">药名：______</text>
+<text x="656" y="872" font-size="50" fill="#17342F">每次：___单位</text>
+<text x="656" y="940" font-size="38" fill="#17342F">规格/来源：____</text>
+<rect x="64" y="988" width="544" height="310" rx="18" fill="white" stroke="#D7E0D8" stroke-width="2"/>
+<rect x="64" y="988" width="544" height="84" rx="18" fill="#145B4B"/>
+<text x="88" y="1048" font-size="50" fill="white">晚饭前</text>
+<text x="88" y="1142" font-size="50" fill="#17342F">药名：______</text>
+<text x="88" y="1206" font-size="50" fill="#17342F">每次：___单位</text>
+<text x="88" y="1274" font-size="38" fill="#17342F">规格/来源：____</text>
+<rect x="632" y="988" width="544" height="310" rx="18" fill="white" stroke="#D7E0D8" stroke-width="2"/>
+<rect x="632" y="988" width="544" height="84" rx="18" fill="#DCEAE0"/>
+<text x="656" y="1048" font-size="50" fill="#17342F">晚饭后</text>
+<text x="656" y="1142" font-size="50" fill="#17342F">药名：______</text>
+<text x="656" y="1206" font-size="50" fill="#17342F">每次：___单位</text>
+<text x="656" y="1274" font-size="38" fill="#17342F">规格/来源：____</text>
+<text x="64" y="1400" font-size="42" fill="#17342F">随餐、睡前、明确钟点用药：另页记录。</text>
+<text x="64" y="1470" font-size="42" fill="#17342F">待确认：________________________</text>
+<path d="M64 1508 H1176" stroke="#D7E0D8" stroke-width="2"/>
+<text x="64" y="1580" font-size="38" fill="#17342F">仅作健康常识解释，不替代执业医师诊断与处方调整。</text>
+<text x="64" y="1700" font-size="38" fill="#145B4B">医嘱有变化，请重新核对本表。</text>
+</g>
+</svg>
