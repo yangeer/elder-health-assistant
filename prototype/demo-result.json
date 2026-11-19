@@ -1,0 +1,5 @@
+{
+  "reminders": [
+    {"name":"早餐用药提醒（示例）","meal":"breakfast","relation":"before","minutes":20,"confirmed":true,"source":"虚构用法 · 早餐前 20 分钟"}
+  ]
+}
